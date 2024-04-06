@@ -10,8 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.16",
     "@astrojs/check": "^0.5.10",
+    "@fontsource-variable/league-spartan": "^5.0.19",
+    "@fontsource-variable/quicksand": "^5.0.17",
+    "astro": "^4.5.16",
+    "sass": "^1.74.1",
     "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "eslint-plugin-astro": "^0.34.0",
+    "postcss-html": "^1.6.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "stylelint-config-html": "^1.1.0"
   }
 }
