@@ -6,8 +6,8 @@ export default {
     {
       files: "*.astro",
       options: {
-        parser: "astro",
-        htmlWhitespaceSensitivity: "scss",
+
+
         printWidth: 80,
         tabWidth: 2,
         useTabs: false,
