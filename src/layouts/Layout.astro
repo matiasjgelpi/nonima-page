@@ -28,8 +28,10 @@ const { title } = Astro.props;
     --black: #000;
     --green: #438185;
     --violet: #8963ba;
-    --light-green: rgba(183, 215, 216, 0.5);
-    --light-violet: rgba(164, 149, 193, 0.5);
+    --light-green: rgba(183, 215, 216, 0.8);
+    --light-violet: rgba(164, 149, 193, 0.8);
+    --lighter-green: rgba(183, 215, 216, 0.5);
+    --lighter-violet: rgba(164, 149, 193, 0.5);
     --text-font: 'Quicksand Variable', sans-serif;
     --heading-font: 'League Spartan', sans-serif;
   }
@@ -40,6 +42,7 @@ const { title } = Astro.props;
     height: 100vh;
     height: 100dvh;
     margin: 0;
+    font-family: var(--text-font);
 
     p {
       margin: 0;
