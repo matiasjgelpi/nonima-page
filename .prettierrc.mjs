@@ -6,8 +6,6 @@ export default {
     {
       files: "*.astro",
       options: {
-
-
         printWidth: 80,
         tabWidth: 2,
         useTabs: false,
@@ -15,6 +13,7 @@ export default {
         singleQuote: true,
         trailingComma: "all",
         bracketSpacing: true,
+        jsxBracketSameLine: false,
       },
     },
   ],

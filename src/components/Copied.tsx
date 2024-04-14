@@ -26,6 +26,7 @@ const Copied = () => {
         paddingBottom: "4px",
       }}
     >
+      <p>Ecríbenos </p>
       <img
         style={{ cursor: "pointer" }}
         onClick={() => copiarTextoAlPortapapeles("nonimamdq@gmail.com")}

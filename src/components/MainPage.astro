@@ -15,6 +15,7 @@ import {
   whatText,
   whyText,
   authorBio,
+  keyWords,
 } from '../assets/content/main-content.json';
 import Copied from './Copied';
 ---
@@ -22,23 +23,28 @@ import Copied from './Copied';
 <Layout title="nonima">
   <div class="container">
     <section class="header">
-      <div>
-        <a href="https://wa.me/542235171352" target="_blank">
-          <Image class="violet" src={whatsapp} alt="whatsapp icon" width={25} />
-        </a>
-      </div>
-      <div>
-        <a href="https://www.instagram.com/nonimamdq/" target="_blank">
-          <Image
-            class="violet"
-            src={instagram}
-            alt="instagram icon"
-            width={25}
-          />
-        </a>
-      </div>
-      <div>
-        <Copied client:load />
+      <Copied client:load />
+      <div class="social">
+        <div>
+          <a href="https://wa.me/542235171352" target="_blank">
+            <Image
+              class="violet"
+              src={whatsapp}
+              alt="whatsapp icon"
+              width={24}
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/nonimamdq/" target="_blank">
+            <Image
+              class="violet"
+              src={instagram}
+              alt="instagram icon"
+              width={24}
+            />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -57,8 +63,9 @@ import Copied from './Copied';
         <p class="subtitule">{subtitle}</p>
       </div>
       <div class="info">
-        <p>{whatText}</p>
-        <p>{whyText}</p>
+        {keyWords.map((keyWord) => <p>{keyWord}</p>)}
+        <!-- <p>{whatText}</p> -->
+        <!-- <p>{whyText}</p> -->
       </div>
     </section>
     <section class="footer">
@@ -78,7 +85,7 @@ import Copied from './Copied';
 
     .header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       gap: 10px;
       padding: 10px 5%;
@@ -87,6 +94,11 @@ import Copied from './Copied';
 
       a {
         cursor: pointer;
+      }
+
+      .social {
+        display: flex;
+        gap: 10px;
       }
     }
 
@@ -97,14 +109,14 @@ import Copied from './Copied';
       font-size: 1rem;
       background-color: var(--lighter-green);
       flex-grow: 1;
-      padding: 2% 5%;
+      width: 100%;
+      gap: 1rem;
 
       .logo {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
         .globos-container {
           position: relative;
           width: 350px;
@@ -150,27 +162,41 @@ import Copied from './Copied';
           animation: slideIn 2s forwards;
           animation-iteration-count: 1;
         }
-
-        @keyframes slideIn {
-          0% {
-            right: -100px;
-            opacity: 0;
-          }
-          100% {
-            right: 0;
-            opacity: 1;
-          }
-        }
       }
 
       .info {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        width: 50%;
         font-weight: 600;
         font-size: 1.3rem;
         padding: 2rem 5% 2rem 5%;
+        position: relative;
+        p {
+          text-transform: uppercase;
+          color: var(--violet);
+          padding: 0 5px;
+          &:hover {
+            color: var(--green);
+            border-radius: 5px;
+            background-color: var(--lighter-violet);
+          }
+          right: -100px;
+          animation: slideIn 2s forwards;
+          animation-iteration-count: 1;
+          // position: absolute;
+        }
+      }
+
+      @keyframes slideIn {
+        0% {
+          right: -100px;
+          opacity: 0;
+        }
+        100% {
+          right: 0;
+          opacity: 1;
+        }
       }
     }
 
