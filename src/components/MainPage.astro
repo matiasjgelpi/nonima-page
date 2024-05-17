@@ -8,6 +8,8 @@ import whatsapp from '../assets/images/Whatsapp.png';
 import mail from '../assets/images/Mail.png';
 import instagram from '../assets/images/Instagram.png';
 import bioImage from '../assets/images/coty.jpg';
+import conversation from '../assets/images/conversation.svg';
+import coffeConversation from '../assets/images/coffe_conversation.svg';
 
 import {
   title,
@@ -18,6 +20,14 @@ import {
   keyWords,
 } from '../assets/content/main-content.json';
 import Copied from './Copied';
+
+let wordsToHighlight = [
+  'escuchar',
+  'experiencia',
+  'debate',
+  'pensamiento crítico',
+  'desarrollo sociocultural',
+];
 ---
 
 <Layout title="nonima">
@@ -31,7 +41,7 @@ import Copied from './Copied';
               class="violet"
               src={whatsapp}
               alt="whatsapp icon"
-              width={24}
+              width={16}
             />
           </a>
         </div>
@@ -41,7 +51,7 @@ import Copied from './Copied';
               class="violet"
               src={instagram}
               alt="instagram icon"
-              width={24}
+              width={17}
             />
           </a>
         </div>
@@ -49,23 +59,42 @@ import Copied from './Copied';
     </section>
 
     <section class="content">
-      <div class="logo">
-        <div class="globos-container">
-          <Image class="green" src={globoVerde} alt="Globo verde" width={250} />
-          <Image
-            class="violet"
-            src={globoVioleta}
-            alt="Globo violeta"
-            width={250}
-          />
-        </div>
-        <p class="title">{title}</p>
-        <p class="subtitule">{subtitle}</p>
+      <div class="up-bars-container">
+        <div class="violet-bar"></div>
+        <div class="green-bar"></div>
       </div>
-      <div class="info">
-        {keyWords.map((keyWord) => <p>{keyWord}</p>)}
-        <!-- <p>{whatText}</p> -->
-        <!-- <p>{whyText}</p> -->
+      <div class="front-info">
+        <div class="logo">
+          <div class="globos-container">
+            <Image
+              class="green"
+              src={globoVerde}
+              alt="Globo verde"
+              width={250}
+            />
+            <Image
+              class="violet"
+              src={globoVioleta}
+              alt="Globo violeta"
+              width={250}
+            />
+          </div>
+          <p class="title">{title}</p>
+          <p class="subtitule">{subtitle}</p>
+        </div>
+        <div class="info">
+          <!-- {keyWords.map((keyWord) => <p>{keyWord}</p>)} -->
+          <p>{whatText}</p>
+          <!-- <Image src={coffeConversation} alt="chat ilustration" width={250} /> -->
+          <p>{whyText}</p>
+         
+        </div>
+      </div>
+
+      <div class="down-bars-container">
+        <div class="green-bar"></div>
+        <div class="violet-bar"></div>
+        <!-- <div class="green-bar"></div> -->
       </div>
     </section>
     <section class="footer">
@@ -88,103 +117,154 @@ import Copied from './Copied';
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      padding: 10px 5%;
+      padding: 2px 5%;
       background-color: var(--light-green);
       width: -webkit-fill-available;
 
       a {
         cursor: pointer;
+        height: fit-content;
       }
 
       .social {
         display: flex;
+        justify-content: center;
         gap: 10px;
+        > div {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
 
     .content {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      // align-items: center;
       font-size: 1rem;
-      background-color: var(--lighter-green);
+      // background-color: var(--lighter-green);
       flex-grow: 1;
       width: 100%;
       gap: 1rem;
 
-      .logo {
+      .green-bar {
+        background-color: var(--light-green);
+        width: 100%;
+        height: 10px;
+        width: 50%;
+        animation: slideIn 2s forwards;
+        animation-iteration-count: 1;
+      }
+
+      .violet-bar {
+        background-color: var(--light-violet);
+        width: 100%;
+        height: 20px;
+      }
+
+      .down-bars-container,
+      .up-bars-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .globos-container {
-          position: relative;
-          width: 350px;
-          height: 200px;
+        // justify-content: center;
+        // align-items: center;
+        width: 100%;
+        gap: 10px;
+      }
 
-          .green {
-            transform: scaleX(-1);
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            z-index: 2;
-            right: -100px;
-            animation: slideIn 2s forwards;
-            animation-iteration-count: 1;
+      .down-bars-container {
+        // padding-bottom: 5px;
+        .green-bar {
+          &:first-child {
+            margin-left: 50%;
           }
-
-          .violet {
-            transform: scaleX(-1);
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            z-index: 1;
-            right: -100px;
-            animation: slideIn 2s forwards;
-            animation-iteration-count: 1;
-          }
-        }
-
-        .title {
-          font-size: 7rem;
-          font-family: var(--heading-font);
-          font-weight: 900;
-          color: var(--black);
-        }
-
-        .subtitule {
-          font-size: 2rem;
-          color: var(--violet);
-          letter-spacing: 0.7rem;
-          opacity: 0;
-          position: relative;
-          right: -100px;
-          animation: slideIn 2s forwards;
-          animation-iteration-count: 1;
         }
       }
 
-      .info {
+      .front-info {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        font-weight: 600;
-        font-size: 1.3rem;
-        padding: 2rem 5% 2rem 5%;
-        position: relative;
-        p {
-          text-transform: uppercase;
-          color: var(--violet);
-          padding: 0 5px;
-          &:hover {
-            color: var(--green);
-            border-radius: 5px;
-            background-color: var(--lighter-violet);
+        align-items: center;
+        justify-content: center;
+        padding: 0 8%;
+        gap: 10%;
+
+        .logo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .globos-container {
+            position: relative;
+            width: 350px;
+            height: 200px;
+
+            .green {
+              transform: scaleX(-1);
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              z-index: 2;
+              right: -100px;
+              animation: slideIn 2s forwards;
+              animation-iteration-count: 1;
+            }
+
+            .violet {
+              transform: scaleX(-1);
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              z-index: 1;
+              right: -100px;
+              animation: slideIn 2s forwards;
+              animation-iteration-count: 1;
+            }
           }
-          right: -100px;
-          animation: slideIn 2s forwards;
-          animation-iteration-count: 1;
-          // position: absolute;
+
+          .title {
+            font-size: 7rem;
+            font-family: var(--heading-font);
+            font-weight: 900;
+            color: var(--black);
+          }
+
+          .subtitule {
+            font-size: 2rem;
+            color: var(--violet);
+            letter-spacing: 0.4rem;
+            opacity: 0;
+            position: relative;
+            right: -100px;
+            animation: slideIn 2s forwards;
+            animation-iteration-count: 1;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          // font-weight: 600;
+          // font-size: 1.3rem;
+          // padding: 2rem 5% 2rem 5%;
+          position: relative;
+          p {
+            text-transform: uppercase;
+            // color: var(--violet);
+            padding: 0 5px;
+            &:hover {
+              color: var(--green);
+              border-radius: 5px;
+              background-color: var(--lighter-violet);
+            }
+            right: -100px;
+            animation: slideIn 2s forwards;
+            animation-iteration-count: 1;
+            // position: absolute;
+          }
         }
       }
 

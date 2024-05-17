@@ -22,20 +22,23 @@ const Copied = () => {
         display: "flex",
         flexWrap: "nowrap",
         alignItems: "center",
-        gap: "10px",
+        gap: "5px",
         paddingBottom: "4px",
+        fontSize: "14px",
       }}
     >
-      <p>Ecríbenos </p>
+      <p>Ecríbime: </p>
       <img
         style={{ cursor: "pointer" }}
         onClick={() => copiarTextoAlPortapapeles("nonimamdq@gmail.com")}
         src={mail.src}
         alt="mail-icon"
-        width={25}
+        width={16}
       />
 
-      <p style={{ opacity: opacidad }}>Copiado!</p>
+      <p style={{ opacity: opacidad, fontSize: "10px", fontStyle: "italic" }}>
+        Copiado!
+      </p>
     </div>
   );
 };
