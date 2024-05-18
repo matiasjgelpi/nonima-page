@@ -5,11 +5,9 @@ import { Image } from 'astro:assets';
 import globoVerde from '../assets/images/globoVerde.png';
 import globoVioleta from '../assets/images/globoVioleta.png';
 import whatsapp from '../assets/images/Whatsapp.png';
-import mail from '../assets/images/Mail.png';
 import instagram from '../assets/images/Instagram.png';
 import bioImage from '../assets/images/coty.jpg';
 import conversation from '../assets/images/conversation.svg';
-import coffeConversation from '../assets/images/coffe_conversation.svg';
 
 import {
   title,
@@ -17,17 +15,8 @@ import {
   whatText,
   whyText,
   authorBio,
-  keyWords,
 } from '../assets/content/main-content.json';
 import Copied from './Copied';
-
-let wordsToHighlight = [
-  'escuchar',
-  'experiencia',
-  'debate',
-  'pensamiento crítico',
-  'desarrollo sociocultural',
-];
 ---
 
 <Layout title="nonima">
@@ -41,18 +30,13 @@ let wordsToHighlight = [
               class="violet"
               src={whatsapp}
               alt="whatsapp icon"
-              width={16}
+              width={18}
             />
           </a>
         </div>
         <div>
           <a href="https://www.instagram.com/nonimamdq/" target="_blank">
-            <Image
-              class="violet"
-              src={instagram}
-              alt="instagram icon"
-              width={17}
-            />
+            <Image src={instagram} alt="instagram icon" width={18} />
           </a>
         </div>
       </div>
@@ -66,35 +50,31 @@ let wordsToHighlight = [
       <div class="front-info">
         <div class="logo">
           <div class="globos-container">
-            <Image
-              class="green"
-              src={globoVerde}
-              alt="Globo verde"
-              width={250}
-            />
-            <Image
-              class="violet"
-              src={globoVioleta}
-              alt="Globo violeta"
-              width={250}
-            />
+            <Image class="green" src={globoVerde} alt="Globo verde" />
+            <Image class="violet" src={globoVioleta} alt="Globo violeta" />
           </div>
           <p class="title">{title}</p>
+
           <p class="subtitule">{subtitle}</p>
         </div>
+
         <div class="info">
-          <!-- {keyWords.map((keyWord) => <p>{keyWord}</p>)} -->
           <p>{whatText}</p>
-          <!-- <Image src={coffeConversation} alt="chat ilustration" width={250} /> -->
+          <div class="info-image-container">
+            <Image
+              class="info-image"
+              src={conversation}
+              alt="chat ilustration"
+            />
+          </div>
+
           <p>{whyText}</p>
-         
         </div>
       </div>
 
       <div class="down-bars-container">
         <div class="green-bar"></div>
         <div class="violet-bar"></div>
-        <!-- <div class="green-bar"></div> -->
       </div>
     </section>
     <section class="footer">
@@ -143,9 +123,7 @@ let wordsToHighlight = [
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // align-items: center;
       font-size: 1rem;
-      // background-color: var(--lighter-green);
       flex-grow: 1;
       width: 100%;
       gap: 1rem;
@@ -169,14 +147,11 @@ let wordsToHighlight = [
       .up-bars-container {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         width: 100%;
         gap: 10px;
       }
 
       .down-bars-container {
-        // padding-bottom: 5px;
         .green-bar {
           &:first-child {
             margin-left: 50%;
@@ -190,6 +165,9 @@ let wordsToHighlight = [
         justify-content: center;
         padding: 0 8%;
         gap: 10%;
+        @media (max-width: 600px) {
+          flex-direction: column;
+        }
 
         .logo {
           display: flex;
@@ -200,6 +178,10 @@ let wordsToHighlight = [
             position: relative;
             width: 350px;
             height: 200px;
+            @media (max-width: 600px) {
+              width: 275px;
+              height: 160px;
+            }
 
             .green {
               transform: scaleX(-1);
@@ -210,6 +192,12 @@ let wordsToHighlight = [
               right: -100px;
               animation: slideIn 2s forwards;
               animation-iteration-count: 1;
+              width: 250px;
+              height: 250px;
+              @media (max-width: 600px) {
+                width: 190px;
+                height: 190px;
+              }
             }
 
             .violet {
@@ -221,6 +209,12 @@ let wordsToHighlight = [
               right: -100px;
               animation: slideIn 2s forwards;
               animation-iteration-count: 1;
+              width: 250px;
+              height: 250px;
+              @media (max-width: 600px) {
+                width: 190px;
+                height: 190px;
+              }
             }
           }
 
@@ -229,10 +223,13 @@ let wordsToHighlight = [
             font-family: var(--heading-font);
             font-weight: 900;
             color: var(--black);
+            @media (max-width: 600px) {
+              font-size: 4.5rem;
+            }
           }
 
           .subtitule {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--violet);
             letter-spacing: 0.4rem;
             opacity: 0;
@@ -240,20 +237,28 @@ let wordsToHighlight = [
             right: -100px;
             animation: slideIn 2s forwards;
             animation-iteration-count: 1;
+            @media (max-width: 600px) {
+              font-size: 1rem;
+            }
           }
         }
 
         .info {
+          position: relative;
+          z-index: 2;
           display: flex;
           flex-direction: column;
+          justify-content: center;
           gap: 1rem;
-          // font-weight: 600;
-          // font-size: 1.3rem;
-          // padding: 2rem 5% 2rem 5%;
+          font-weight: 600;
           position: relative;
+          @media (max-width: 600px) {
+            padding-top: 1rem;
+            font-size: 14px;
+            font-weight: 500;
+          }
           p {
             text-transform: uppercase;
-            // color: var(--violet);
             padding: 0 5px;
             &:hover {
               color: var(--green);
@@ -263,7 +268,24 @@ let wordsToHighlight = [
             right: -100px;
             animation: slideIn 2s forwards;
             animation-iteration-count: 1;
-            // position: absolute;
+            @media (max-width: 600px) {
+              text-align: center;
+            }
+          }
+
+          .info-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .info-image {
+              opacity: 0.5;
+              width: 90px;
+              height: 90px;
+              @media (max-width: 600px) {
+                width: 70px;
+                height: 70px;
+              }
+            }
           }
         }
       }
@@ -285,14 +307,24 @@ let wordsToHighlight = [
       background-color: var(--light-green);
       display: flex;
       align-items: center;
+      @media (max-width: 600px) {
+        flex-direction: column;
+        padding: 1rem;
+      }
       .bio {
         border-radius: 25%;
         object-fit: cover;
         height: 80%;
+        @media (max-width: 600px) {
+          text-align: center;
+        }
       }
 
       p {
         padding: 0 5%;
+        @media (max-width: 600px) {
+          padding: 10px 0;
+        }
       }
     }
   }
