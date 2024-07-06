@@ -1,5 +1,12 @@
 ---
+import Header from '../components/Header.astro';
 import MainPage from '../components/MainPage.astro';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<MainPage />
+<Layout title="nonima">
+  <Header />
+  <MainPage />
+  <Footer />
+</Layout>
