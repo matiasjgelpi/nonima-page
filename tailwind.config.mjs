@@ -18,5 +18,5 @@ export default {
       "lighter-violet": "rgba(164, 149, 193, 0.5)",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };

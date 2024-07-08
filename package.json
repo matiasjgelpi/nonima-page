@@ -18,13 +18,16 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
     "@types/react": "^18.2.78",
     "@types/react-dom": "^18.2.25",
+    "aos": "^2.3.4",
     "astro": "^4.5.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.74.1",
+    "tailwindcss-animated": "^1.1.2",
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@typescript-eslint/parser": "^7.15.0",
     "eslint": "^9.6.0",
     "eslint-plugin-astro": "^1.2.2",

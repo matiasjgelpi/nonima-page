@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 const content = {
   whatText:
     "Se trata de encuentros con mujeres que hacen su aporte al mundo desde sus visiones de la cultura, el arte o simplemente visibilizan la riqueza del rol de la mujer en distintos ámbitos.",
@@ -11,7 +9,11 @@ const content = {
 const { whatText, whyText } = content;
 ---
 
-<section id={"what"} class="flex items-center bg-light-green py-4 px-64 gap-6">
-  <p class="p-9 bg-opacity-20 w-1/2 bg-lighter-green rounded-3xl">{whatText}</p>
-  <p class="p-9 bg-opacity-20 w-1/2 bg-lighter-green rounded-3xl">{whyText}</p>
+<section
+  id={"what"}
+  class="flex items-center bg-light-green py-4 px-64 gap-6"
+ 
+>
+  <p class="p-9 bg-opacity-20 w-1/2 bg-lighter-green rounded-3xl" data-aos="fade-right">{whatText}</p>
+  <p class="p-9 bg-opacity-20 w-1/2 bg-lighter-green rounded-3xl" data-aos="fade-left">{whyText}</p>
 </section>
