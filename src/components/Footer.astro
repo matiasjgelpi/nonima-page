@@ -1,22 +1,19 @@
 ---
-import { Image } from 'astro:assets';
-import bioImage from '../assets/images/coty.jpg';
+import { Image } from "astro:assets";
+import bioImage from "../assets/images/coty.jpg";
 
 const content = {
-  authorBio:
-    'Coty Schnass, egresada del Polivalente de Arte y Gestora Cultural por la UNMDP. Pasante en la Feria del Libro y voluntaria en Casa Bruzzone durante varios años. amante del arte y la cultura, recorrió diferentes museos del mundo admirando la belleza, pero también prestando atención a la organización que facilita tener grandes experiencias. Hoy, tras años de colaborar con otros, se anima a llevar adelante un proyecto propio, pero a la vez con el anhelo de convertirlo en algo compartido.',
+  instagram: "https://www.instagram.com/nonimamdq/",
+  whatsapp:
+    "https://api.whatsapp.com/send?phone=542235171352&text=Hola Constanzas, soy",
+  mail: "nonimamdq@gmail.com",
 };
 
-const { authorBio } = content;
+const { instagram, whatsapp, mail } = content;
 ---
 
-<section class="flex items-center bg-light-green py-4 px-64 gap-6">
-  <Image
-    class="rounded-3xl object-cover"
-    src={bioImage}
-    alt="imagen de biografía"
-    width={150}
-  />
-
-  <p class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl">{authorBio}</p>
+<section id={"contact"} class="flex items-center bg-light-green py-4 px-64 gap-6">
+  <a href={instagram} target="_blank">instagram</a>
+  <a href={whatsapp} target="_blank">whatsapp</a>
+  <a href={"mailto:" + mail} target="_blank">{mail}</a>
 </section>

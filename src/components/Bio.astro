@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import bioImage from "../assets/images/coty.jpg";
+
+const content = {
+  authorBio:
+    "Coty Schnass, egresada del Polivalente de Arte y Gestora Cultural por la UNMDP. Pasante en la Feria del Libro y voluntaria en Casa Bruzzone durante varios años. amante del arte y la cultura, recorrió diferentes museos del mundo admirando la belleza, pero también prestando atención a la organización que facilita tener grandes experiencias. Hoy, tras años de colaborar con otros, se anima a llevar adelante un proyecto propio, pero a la vez con el anhelo de convertirlo en algo compartido.",
+};
+
+const { authorBio } = content;
+---
+
+<section id={"about"} class="flex items-center bg-light-green py-4 px-64 gap-6">
+  <Image
+    class="rounded-3xl object-cover"
+    src={bioImage}
+    alt="imagen de biografía"
+    
+    width={150}
+  />
+  <p class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl">{authorBio}</p>
+</section>
