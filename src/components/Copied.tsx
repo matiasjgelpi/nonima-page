@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import mail from "../assets/images/Mail.png";
+import { useState } from "react";
 
 const Copied = () => {
   const [copiedText, setCopiedText] = useState<string | undefined>(undefined);
@@ -9,6 +8,10 @@ const Copied = () => {
     try {
       await navigator.clipboard.writeText(texto);
 
+      if (opacidad === "1") {
+        setOpacidad("0");
+      }
+
       setCopiedText(texto);
       setOpacidad("1");
     } catch (error) {
@@ -17,26 +20,21 @@ const Copied = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "nowrap",
-        alignItems: "center",
-        gap: "5px",
-        paddingBottom: "4px",
-        fontSize: "14px",
-      }}
-    >
-      <p>Ecríbime: </p>
-      <img
-        style={{ cursor: "pointer" }}
+    <div>
+      <button
+        className={`${opacidad === "0" && "hover:after:content-['copiar']"}  after:text-xs after:font-normal after:pl-1`}
         onClick={() => copiarTextoAlPortapapeles("nonimamdq@gmail.com")}
-        src={mail.src}
-        alt="mail-icon"
-        width={16}
-      />
+      >
+        nonimamdq@gmail.com
+      </button>
 
-      <p style={{ opacity: opacidad, fontSize: "10px", fontStyle: "italic" }}>
+      <p
+        style={{
+          display: `${opacidad === "0" ? "none" : "inline"}`,
+          fontSize: "10px",
+          fontStyle: "italic",
+        }}
+      >
         Copiado!
       </p>
     </div>

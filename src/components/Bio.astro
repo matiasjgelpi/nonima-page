@@ -11,12 +11,19 @@ const { authorBio } = content;
 ---
 
 <section id={"about"} class="flex items-center bg-light-green py-4 px-64 gap-6">
-  <Image
-    class="rounded-3xl object-cover"
-    src={bioImage}
-    alt="imagen de biografía"
-    
-    width={150}
-  />
-  <p class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl">{authorBio}</p>
+  <div class="w-1/2" data-aos="flip-right">
+    <Image
+      class="w-full h-full object-cover rounded-3xl"
+      src={bioImage}
+      alt="imagen de biografía"
+    />
+  </div>
+  <div
+    class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl w-1/2 h-full flex items-center"
+    data-aos="flip-left"
+  >
+    <p>
+      {authorBio}
+    </p>
+  </div>
 </section>
