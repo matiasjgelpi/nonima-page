@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import arrow from "../assets/images/arrow.svg";
+
+const content = {
+  whatText:
+    "Se trata de encuentros con mujeres que hacen su aporte al mundo desde sus visiones de la cultura, el arte o simplemente visibilizan la riqueza del rol de la mujer en distintos ámbitos.",
+  whyText:
+    "Surgidos desde la necesidad de expresarnos, de escuchar experiencias reales, tangibles, cercanas; de manera presente, escuchando un interlocutor que nos cuente su experiencia, y siendo esto no un fin en sí mismo sino la puerta para abrirnos al debate, a promover el pensamiento crítico para que todos podamos mejorar nuestro desarrollo sociocultural.",
+};
+
+const { whatText, whyText } = content;
+---
+
+<section
+  id={"what"}
+  class="flex flex-col max-sm:items-center bg-light-green py-4 px-64 max-sm:px-3 gap-6 max-sm:gap-2"
+>
+  <p class="font-bold ">Que somos?</p>
+  <div class="flex max-sm:flex-col items-center">
+  <div
+    class="p-9 bg-opacity-20 w-1/2 max-sm:w-full h-full bg-lighter-green rounded-3xl flex items-center"
+    data-aos="zoom-in"
+  >
+    <p>
+      {whatText}
+    </p>
+  </div>
+  <Image class="max-sm:rotate-90" src={arrow} alt={"right arrow"} />
+  <div
+    class="p-9 bg-opacity-20 w-1/2 max-sm:w-full h-full bg-lighter-green rounded-3xl flex items-center"
+    data-aos="zoom-in"
+  >
+    <p>
+      {whyText}
+    </p>
+  </div>
+</div>
+</section>

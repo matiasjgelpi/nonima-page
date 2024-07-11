@@ -1,6 +1,8 @@
 ---
-import '@fontsource-variable/league-spartan';
-import '@fontsource-variable/quicksand';
+import "@fontsource-variable/league-spartan";
+import "@fontsource-variable/quicksand";
+import "aos/dist/aos.css";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -10,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -18,34 +20,50 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <slot />
+    <script>
+      import { aosInit } from "../utils/aos";
+      aosInit();
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "Xg6jszZ2HUZtOBx_J",
+        });
+      })();
+    </script>
+    <style is:global lang="scss">
+      :root {
+        --black: #000;
+        --green: #438185;
+        --violet: #8963ba;
+        --light-green: rgba(183, 215, 216, 0.8);
+        --light-violet: rgba(164, 149, 193, 0.8);
+        --lighter-green: rgba(183, 215, 216, 0.5);
+        --lighter-violet: rgba(164, 149, 193, 0.5);
+        --text-font: "Quicksand Variable", sans-serif;
+        --heading-font: "League Spartan", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        height: 100dvh;
+        margin: 0;
+        font-family: var(--text-font);
+
+        p {
+          margin: 0;
+        }
+      }
+    </style>
   </body>
 </html>
-<style is:global lang="scss">
-  :root {
-    --black: #000;
-    --green: #438185;
-    --violet: #8963ba;
-    --light-green: rgba(183, 215, 216, 0.8);
-    --light-violet: rgba(164, 149, 193, 0.8);
-    --lighter-green: rgba(183, 215, 216, 0.5);
-    --lighter-violet: rgba(164, 149, 193, 0.5);
-    --text-font: 'Quicksand Variable', sans-serif;
-    --heading-font: 'League Spartan', sans-serif;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    height: 100dvh;
-    margin: 0;
-    font-family: var(--text-font);
-
-    p {
-      margin: 0;
-    }
-  }
-</style>
