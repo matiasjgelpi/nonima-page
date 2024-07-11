@@ -10,8 +10,8 @@ const content = {
 const { authorBio } = content;
 ---
 
-<section id={"about"} class="flex items-center bg-light-green py-4 px-64 gap-6">
-  <div class="w-1/2" data-aos="flip-right">
+<section id={"about"} class="flex max-sm:flex-col items-center bg-light-green py-4 px-64 max-sm:px-3 gap-6">
+  <div class="w-1/2 max-sm:w-full" data-aos="flip-right">
     <Image
       class="w-full h-full object-cover rounded-3xl"
       src={bioImage}
@@ -19,7 +19,7 @@ const { authorBio } = content;
     />
   </div>
   <div
-    class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl w-1/2 h-full flex items-center"
+    class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl w-1/2 max-sm:w-full h-full flex items-center"
     data-aos="flip-left"
   >
     <p>

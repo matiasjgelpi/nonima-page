@@ -1,12 +1,12 @@
 ---
-import '@fontsource-variable/league-spartan';
+import "@fontsource-variable/league-spartan";
 
 const content = {
-  title: 'nonima',
-  subtitle: 'Hablemos de cultura',
+  title: "nonima",
+  subtitle: "Hablemos de cultura",
 };
 
-import Infoillustration from './Infoillustration.astro';
+import Infoillustration from "./Infoillustration.astro";
 ---
 
 <div class="flex flex-col items-center justify-center h-fit">
@@ -15,16 +15,15 @@ import Infoillustration from './Infoillustration.astro';
       <div class="bg-light-violet w-full h-5"></div>
       <div class="bg-light-green w-1/2 h-2"></div>
     </div>
-    <div class="flex justify-center items-center w-full gap-10 px-64 ">
-  
-        
-     
-      <div class="w-1/2">
+    <div
+      class="flex max-sm:flex-col justify-center items-center w-full gap-10 max-sm:gap-0 px-64 max-sm:px-3"
+    >
+      <div class="w-1/2 max-sm:w-full">
         <Infoillustration />
       </div>
-    <div class="w-2/4">
-      <p class="text-4xl text-violet font-bold ">{content.subtitle}</p>
-       </div>
+      <div class="w-2/4 max-sm:w-full">
+        <p class="text-4xl  max-sm:text-3xl max-sm:text-center max-sm:pb-3 text-violet font-bold">{content.subtitle}</p>
+      </div>
     </div>
 
     <div class="flex flex-col w-full gap-2">

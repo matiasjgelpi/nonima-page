@@ -42,7 +42,7 @@ export default function Form() {
           className="animate-jump-in p-1 rounded-xl bg-light-green text-center"
           style={{ color: "green" }}
         >
-          El mensaje envío correctamente! 😊
+          El mensaje se envío correctamente! 😊
         </p>
       )}
       {sendStatus === "error" && (
@@ -57,7 +57,7 @@ export default function Form() {
         <label className="flex flex-col font-normal gap-1">
           Nombre:
           <input
-            className="rounded-md"
+            className="rounded-md p-1"
             type="text"
             name="from_name"
             id="from_name"
@@ -67,7 +67,7 @@ export default function Form() {
         <label className="flex flex-col font-normal gap-1">
           Correo electrónico:
           <input
-            className="rounded-md"
+            className="rounded-md p-1"
             type="email"
             name="email_id"
             id="email_id"
@@ -77,7 +77,7 @@ export default function Form() {
         <label className="flex flex-col font-normal gap-1">
           Mensaje:
           <textarea
-            className="rounded-md"
+            className="rounded-md p-1"
             name="message"
             id="message"
             required
