@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import bioImage from "../assets/images/coty.jpg";
+import arrow from "../assets/images/arrow.svg";
 
 const content = {
   authorBio:
@@ -10,21 +11,27 @@ const content = {
 const { authorBio } = content;
 ---
 
-<section id={"about"} class="flex max-sm:flex-col items-center bg-light-green py-4 px-64 max-sm:px-3 gap-6">
+<section
+  id={"about"}
+  class="flex flex-col max-md:items-center bg-light-green py-4 px-64 max-sm:px-3 gap-6 max-sm:gap-2"
+>
   <p class="font-bold">Quienes somos?</p>
-  <div class="w-1/2 max-sm:w-full" data-aos="flip-right">
-    <Image
-      class="w-full h-full object-cover rounded-3xl"
-      src={bioImage}
-      alt="imagen de biografía"
-    />
-  </div>
-  <div
-    class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl w-1/2 max-sm:w-full h-full flex items-center"
-    data-aos="flip-left"
-  >
-    <p>
-      {authorBio}
-    </p>
+  <div class="flex max-sm:flex-col items-center">
+    <div class="w-1/2 max-sm:w-full" data-aos="flip-right">
+      <Image
+        class="object-cover rounded-3xl"
+        src={bioImage}
+        alt="imagen de biografía"
+      />
+    </div>
+    <Image class="max-sm:rotate-90" src={arrow} alt={"right arrow"} />
+    <div
+      class="p-9 bg-opacity-20 bg-lighter-green rounded-3xl w-1/2 max-sm:w-full h-full flex items-center"
+      data-aos="flip-left"
+    >
+      <p>
+        {authorBio}
+      </p>
+    </div>
   </div>
 </section>
